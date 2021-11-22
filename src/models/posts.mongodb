@@ -1,5 +1,5 @@
 //Selecione o database
-use('LabBD')
+use('labDB')
 
 // Remove a collection
 db.posts.drop() 
@@ -58,5 +58,5 @@ db.posts.find({"_id": {$eq: ObjectId("61891d38a64a453659f55c56")}})
 Saiba mais em: https://docs.mongodb.com/manual/core/schema-validation/
 */
 
-db.posts.find({author: /victor/i})
+db.posts.find({author: //i})
 

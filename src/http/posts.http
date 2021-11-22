@@ -1,6 +1,6 @@
 //Teste de Requisições REST - Posts
 @baseURL = http://localhost:4000
-@id = 619aedf54eb704a4d649d329
+@id = 619b7a2987692349f794794f
 ###
 // GET - Lista todos os posts
 GET {{baseURL}}/posts
@@ -17,12 +17,13 @@ POST {{baseURL}}/posts
 Content-Type: application/json
 
 {
-   "title":"Feriado",
-   "description": "Domingao na Paulista",
-   "date": "17/05/2020",
-   "location": "Av. Paulista, 1732",
-   "author": "Victor Hugo"
+   "title":"Segundona braba",
+   "description": "Aula FATEC",
+   "date": "22/11/2021",
+   "location": "FATEC-Itu",
+   "author": "Carlos Prado"
 }
+
 
 ### 
 // DELETE - Apaga um post através do id informado
@@ -35,9 +36,9 @@ PUT {{baseURL}}/posts/
 Content-Type: application/json
 
 {
-    "_id": "6189235f82d2feac0c76f955", 
-   "title":"Maria José Alberto Gus",
-   "description": "Domingao na Paulista",
+    "_id": "619b68a079d36b09aa85a5fc", 
+   "title":"Feriado",
+   "description": "Domingao de sol na Paulista",
    "date": "17/05/2020",
    "location": "Av. Paulista, 1732",
    "author": "Victor Hugo"
