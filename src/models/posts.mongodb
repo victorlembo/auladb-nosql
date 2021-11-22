@@ -1,0 +1,62 @@
+//Selecione o database
+use('LabBD')
+
+// Remove a collection
+db.posts.drop() 
+
+//Cria a collection com a validação do schema
+db.createCollection('posts', {
+    validator: {
+       $jsonSchema: {
+          bsonType: 'object',
+          required: [ 'title', 'description', 'date', 'location', 'author'],
+          properties: {
+             title: {
+                bsonType: 'string',
+                description: 'Titulo do post'
+             },
+             description: {
+                bsonType: 'string',
+                description: 'Descricao do post'
+             },
+             date: {
+                bsonType: 'date',
+                description: 'Data do post'
+             },
+             location: {
+               bsonType: 'string',
+               description: 'Tag do local do post'
+             },
+             author: {
+                bsonType: 'string',
+                description: 'Nome do criador do post'
+             },
+                   }
+                }
+             }
+          }
+,
+    validationLevel: 'strict', //moderate or off
+    validationAction: 'error' //warn
+ )
+
+//Insere um novo registro
+db.posts.insertOne({
+   'title':'Feriado',
+   'description':'Domingao na Paulista',
+   'date':'17/05/2020',
+   'location':'Av. Paulista, 1732',
+   'author': 'Victor Hugo'
+})
+
+//Lista todos os registros
+db.posts.find()
+//Lista um registro pelo Id
+db.posts.find({"_id": {$eq: ObjectId("61891d38a64a453659f55c56")}})
+
+/*
+Saiba mais em: https://docs.mongodb.com/manual/core/schema-validation/
+*/
+
+db.posts.find({author: /victor/i})
+

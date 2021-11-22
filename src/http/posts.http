@@ -1,0 +1,46 @@
+//Teste de Requisições REST - Posts
+@baseURL = http://localhost:4000
+@id = 619aedf54eb704a4d649d329
+###
+// GET - Lista todos os posts
+GET {{baseURL}}/posts
+Content-Type: application/json
+
+###
+// GET - Lista apenas um post pelo id
+GET {{baseURL}}/posts/{{id}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo post
+POST {{baseURL}}/posts
+Content-Type: application/json
+
+{
+   "title":"Feriado",
+   "description": "Domingao na Paulista",
+   "date": "17/05/2020",
+   "location": "Av. Paulista, 1732",
+   "author": "Victor Hugo"
+}
+
+### 
+// DELETE - Apaga um post através do id informado
+DELETE {{baseURL}}/posts/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um post pelo ID
+PUT {{baseURL}}/posts/
+Content-Type: application/json
+
+{
+    "_id": "6189235f82d2feac0c76f955", 
+   "title":"Maria José Alberto Gus",
+   "description": "Domingao na Paulista",
+   "date": "17/05/2020",
+   "location": "Av. Paulista, 1732",
+   "author": "Victor Hugo"
+}
+
+
